@@ -1,0 +1,10 @@
+#
+# ~/.zshrc
+#
+
+autoload -Uz compinit && compinit
+autoload -U +X bashcompinit && bashcompinit
+
+for file in ${HOME}/.rc.d/*.sh; do
+	. "${file}"
+done

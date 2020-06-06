@@ -1,0 +1,6 @@
+[genericSecret]
+command = "gopass"
+
+[diff]
+format = "git"
+pager = "diff-so-fancy"

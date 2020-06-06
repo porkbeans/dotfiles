@@ -1,0 +1,12 @@
+[user]
+	name = {{ (secretJSON "github").username }}
+	email = {{ (secretJSON "github").email }}
+[alias]
+	s = status
+	l = log --oneline
+	d = diff
+	dw = diff --word-diff
+	dc = diff --cached
+	dcw = diff --cached --word-diff
+	amend = commit --amend
+	root = rev-parse --show-toplevel
