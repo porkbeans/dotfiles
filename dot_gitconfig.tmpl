@@ -2,6 +2,7 @@
 	name = {{ (secretJSON "github").username }}
 	email = {{ (secretJSON "github").email }}
 [alias]
+	a = add
 	s = status
 	l = log --oneline
 	d = diff
@@ -10,3 +11,5 @@
 	dcw = diff --cached --word-diff
 	amend = commit --amend
 	root = rev-parse --show-toplevel
+[pull]
+	ff = only
