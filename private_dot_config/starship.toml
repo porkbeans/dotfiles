@@ -1,0 +1,46 @@
+add_newline = false
+prompt_order = [
+	"username", "hostname", "directory", "git_branch", "git_state", "git_status", "line_break",
+	"kubernetes", "python", "ruby", "rust", "nodejs", "terraform", "time", "cmd_duration", "line_break",
+	"character"
+]
+
+[username]
+disabled = false
+show_always = true
+
+[hostname]
+disabled = false
+prefix = "💻 "
+ssh_only = false
+
+[directory]
+disabled = false
+prefix = "📁 "
+truncate_to_repo = true
+truncation_length = 3
+
+[git_status]
+conflicted_count.enabled = true
+untracked_count.enabled = true
+stashed_count.enabled = true
+modified_count.enabled = true
+staged_count.enabled = true
+renamed_count.enabled = true
+deleted_count.enabled = true
+show_sync_count.enabled = true
+
+[time]
+disabled = false
+format = "📅 %Y-%m-%d 🕒 %H:%M:%S"
+
+[kubernetes]
+disabled = false
+
+[terraform]
+disabled = false
+show_version = true
+
+[character]
+disabled = false
+use_symbol_for_status = true
