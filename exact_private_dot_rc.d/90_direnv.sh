@@ -1,3 +1,3 @@
 if exists_command direnv; then
-  eval "$(direnv hook "$(basename "${SHELL}")")"
+  eval "$(direnv hook "${SHELL_NAME}")"
 fi
