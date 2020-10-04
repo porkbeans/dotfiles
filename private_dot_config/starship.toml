@@ -1,24 +1,40 @@
 add_newline = false
-prompt_order = [
-	"username", "hostname", "directory", "git_branch", "git_state", "git_status", "line_break",
-	"kubernetes", "python", "ruby", "rust", "nodejs", "terraform", "time", "cmd_duration", "line_break",
-	"character"
-]
+format = """\
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$line_break\
+$kubernetes\
+$python\
+$ruby\
+$rust\
+$nodejs\
+$terraform\
+$time\
+$cmd_duration\
+$line_break\
+$character\
+"""
 
 [username]
 disabled = false
+format = "👤 [$user]($style) in "
 show_always = true
 
 [hostname]
 disabled = false
-prefix = "💻 "
+format = "💻 [$hostname]($style) in "
 ssh_only = false
 
 [directory]
 disabled = false
-prefix = "📁 "
-truncate_to_repo = true
+format = "📁 [$path]($style)[$read_only]($read_only_style) "
 truncation_length = 3
+truncation_symbol = "…/"
+truncate_to_repo = true
 
 [git_status]
 conflicted_count.enabled = true
@@ -32,7 +48,8 @@ show_sync_count.enabled = true
 
 [time]
 disabled = false
-format = "📅 %Y-%m-%d 🕒 %H:%M:%S"
+time_format = "📅 %Y-%m-%d 🕒 %H:%M:%S "
+format = "$time"
 
 [kubernetes]
 disabled = false
@@ -43,4 +60,3 @@ show_version = true
 
 [character]
 disabled = false
-use_symbol_for_status = true
