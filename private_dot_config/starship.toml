@@ -32,7 +32,7 @@ ssh_only = false
 [directory]
 disabled = false
 format = "📁 [$path]($style)[$read_only]($read_only_style) "
-truncation_length = 3
+truncation_length = 7
 truncation_symbol = "…/"
 truncate_to_repo = true
 
