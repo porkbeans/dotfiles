@@ -7,8 +7,7 @@ My dotfiles managed with chezmoi.
 
 ### Tools
 - [git](https://git-scm.com/downloads)
-- [gpg](https://gnupg.org/download/)
-- [gopass](https://github.com/gopasspw/gopass) for secrets management
+- [bitwarden](https://github.com/bitwarden/cli) for secrets management
 - [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy) for prettified diff
 - [chezmoi](https://github.com/twpayne/chezmoi) for dotfiles management
 - [gibo](https://github.com/simonwhitaker/gibo) for .gitignore
@@ -16,20 +15,9 @@ My dotfiles managed with chezmoi.
 ### Preparation
 
 - Add ssh key to GitHub
-- Restore gpg secret keys
-- Setup minimal chezmoi config
-    > **`~/.config/chezmoi/chezmoi.toml`**
-    > ```toml
-    > [genericSecret]
-    > command = "gopass"
-    > ```
 
 ## Installation
 ```shell script
-# Clone password store
-gopass clone git@github.com:porkbeans/pass.git
-gopass clone git@github.com:messyzone/pass.git messyzone
-
 # Install dotfiles
 chezmoi init git@github.com:porkbeans/dotfiles.git
 chezmoi apply

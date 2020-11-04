@@ -1,6 +1,6 @@
 [user]
-	name = {{ (secretJSON "show" "github").username }}
-	email = {{ (secretJSON "show" "github").email }}
+	name = {{ (bitwarden "item" "github").login.username }}
+	email = {{ (bitwardenFields "item" "github").email.value }}
 [alias]
 	a = add
 	s = status
