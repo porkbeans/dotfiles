@@ -37,14 +37,7 @@ truncation_symbol = "…/"
 truncate_to_repo = true
 
 [git_status]
-conflicted_count.enabled = true
-untracked_count.enabled = true
-stashed_count.enabled = true
-modified_count.enabled = true
-staged_count.enabled = true
-renamed_count.enabled = true
-deleted_count.enabled = true
-show_sync_count.enabled = true
+disabled = false
 
 [time]
 disabled = false
@@ -56,7 +49,7 @@ disabled = false
 
 [terraform]
 disabled = false
-show_version = true
+format = "via [$symbol$version $workspace]($style) "
 
 [character]
 disabled = false
