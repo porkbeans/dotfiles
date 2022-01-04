@@ -9,9 +9,6 @@
     <GoCodeStyleSettings>
       <option name="IMPORT_SORTING" value="GOIMPORTS" />
     </GoCodeStyleSettings>
-    <HCL-Terraform>
-      <option name="PROPERTY_ALIGNMENT" value="2" />
-    </HCL-Terraform>
     <codeStyleSettings language="HTML">
       <indentOptions>
         <option name="INDENT_SIZE" value="2" />
