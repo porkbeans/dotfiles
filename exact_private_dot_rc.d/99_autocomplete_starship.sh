@@ -1,3 +1,4 @@
 if exists_command starship; then
-  eval "$(starship completions "${SHELL_NAME}")"
+  # https://github.com/starship/starship/issues/2806
+  eval "$(starship completions "${SHELL_NAME}" | sed '$d')"
 fi
