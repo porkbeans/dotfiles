@@ -1,3 +1,3 @@
 if has_command kubectl-krew; then
-  export PATH="${HOME}/.krew/bin:${PATH}"
+  add_path "${HOME}/.krew/bin"
 fi

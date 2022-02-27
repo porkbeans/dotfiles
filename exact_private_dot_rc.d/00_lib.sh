@@ -10,3 +10,13 @@ fi
 has_command() {
   command -v "$1" >/dev/null 2>&1
 }
+
+add_path() {
+  case ":$PATH:" in
+  *:"$1":*) ;;
+
+  *)
+    export PATH="$1${PATH:+:$PATH}"
+    ;;
+  esac
+}

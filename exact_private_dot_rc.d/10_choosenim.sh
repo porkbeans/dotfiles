@@ -1,1 +1,1 @@
-export PATH="${HOME}/.nimble/bin:${PATH}"
+add_path "${HOME}/.nimble/bin"
