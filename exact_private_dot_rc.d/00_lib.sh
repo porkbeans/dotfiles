@@ -11,6 +11,10 @@ has_command() {
   command -v "$1" >/dev/null 2>&1
 }
 
+lspath() {
+  echo $PATH | tr : '\n'
+}
+
 add_path() {
   case ":$PATH:" in
   *:"$1":*) ;;
