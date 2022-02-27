@@ -1,3 +1,3 @@
-if exists_command rbenv; then
+if has_command rbenv; then
   eval "$(rbenv init -)"
 fi

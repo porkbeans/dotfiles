@@ -1,3 +1,3 @@
-if exists_command poetry; then
+if has_command poetry; then
   eval "$(poetry completions "${SHELL_NAME}")"
 fi

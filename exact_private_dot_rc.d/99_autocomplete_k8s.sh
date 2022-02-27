@@ -1,15 +1,15 @@
-if exists_command kubectl; then
+if has_command kubectl; then
   eval "$(kubectl completion "${SHELL_NAME}")"
 fi
 
-if exists_command helm; then
+if has_command helm; then
   eval "$(helm completion "${SHELL_NAME}")"
 fi
 
-if exists_command kind; then
+if has_command kind; then
   eval "$(kind completion "${SHELL_NAME}")"
 fi
 
-if exists_command minikube; then
+if has_command minikube; then
   eval "$(minikube completion "${SHELL_NAME}")"
 fi

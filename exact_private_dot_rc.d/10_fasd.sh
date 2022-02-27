@@ -1,4 +1,4 @@
-if exists_command fasd; then
+if has_command fasd; then
   eval "$(fasd --init auto)"
   unalias sd
 

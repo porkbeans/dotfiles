@@ -7,6 +7,6 @@ else
   export SHELL_NAME="$(basename "${SHELL}")"
 fi
 
-exists_command() {
+has_command() {
   command -v "$1" >/dev/null 2>&1
 }
