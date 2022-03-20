@@ -9,5 +9,5 @@ else
 fi
 
 mkcd(){
-    mkdir -pv "$1" && cd "$1" || echo "mkcd: failed to create or enter directory '$1'"
+  mkdir -pv "$1" && cd "$1" || echo "mkcd: failed to create or enter directory '$1'"
 }
