@@ -11,3 +11,7 @@ fi
 mkcd(){
   mkdir -pv "$1" && cd "$1" || echo "mkcd: failed to create or enter directory '$1'"
 }
+
+entropy(){
+  cat /proc/sys/kernel/random/{entropy_avail,poolsize} | paste -s -d /
+}
