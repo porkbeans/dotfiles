@@ -1,3 +1,4 @@
+# shellcheck shell=sh
 if has_command exa; then
   alias ls='exa --group-directories-first'
   alias la='exa --group-directories-first -aa'
@@ -13,5 +14,5 @@ mkcd(){
 }
 
 entropy(){
-  cat /proc/sys/kernel/random/{entropy_avail,poolsize} | paste -s -d /
+  cat /proc/sys/kernel/random/entropy_avail /proc/sys/kernel/random/poolsize | paste -s -d /
 }

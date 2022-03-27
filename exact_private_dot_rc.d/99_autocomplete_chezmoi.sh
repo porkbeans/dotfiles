@@ -1,3 +1,4 @@
+# shellcheck shell=sh
 if has_command chezmoi; then
   eval "$(chezmoi completion "${SHELL_NAME}")"
 fi

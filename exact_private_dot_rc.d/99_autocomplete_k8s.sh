@@ -1,3 +1,4 @@
+# shellcheck shell=sh
 if has_command kubectl; then
   eval "$(kubectl completion "${SHELL_NAME}")"
 fi

@@ -1,3 +1,4 @@
+# shellcheck shell=sh
 if has_command npm; then
   npm config set prefix "${HOME}/.npm" >/dev/null 2>&1
 

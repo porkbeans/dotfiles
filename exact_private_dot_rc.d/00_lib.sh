@@ -1,22 +1,24 @@
-# shellcheck disable=SC2155
-if [ -n "$BASH_VERSION" ]; then
-  export SHELL_NAME="bash"
-elif [ -n "$ZSH_VERSION" ]; then
-  export SHELL_NAME="zsh"
+# shellcheck shell=sh
+if [ -n "${BASH_VERSION}" ]; then
+  SHELL_NAME="bash"
+elif [ -n "${ZSH_VERSION}" ]; then
+  SHELL_NAME="zsh"
 else
-  export SHELL_NAME="$(basename "${SHELL}")"
+  return 1
 fi
+
+export SHELL_NAME
 
 has_command() {
   command -v "$1" >/dev/null 2>&1
 }
 
 lspath() {
-  echo $PATH | tr : '\n'
+  echo "${PATH}" | tr : '\n'
 }
 
 add_path() {
-  case ":$PATH:" in
+  case ":${PATH}:" in
   *:"$1":*) ;;
 
   *)
