@@ -11,6 +11,9 @@ trim_trailing_whitespace = true
 [Makefile]
 indent_style = tab
 
+[*.{c,cc,cpp,cxx,h,hh,hpp,hxx}]
+indent_size = 2
+
 [*.go]
 indent_style = tab
 
