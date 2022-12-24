@@ -4,7 +4,7 @@
 [alias]
 	a = add
 	s = status
-	l = log --oneline
+	l = log --format='format:%cd %C(auto)%H%Creset%C(auto)%d%Creset %s'
 	d = diff
 	dw = diff --word-diff
 	dc = diff --cached
@@ -12,7 +12,7 @@
 	amend = commit --amend
 	root = rev-parse --show-toplevel
 [log]
-	date = iso
+	date = iso-strict
 [pull]
 	ff = only
 [init]
