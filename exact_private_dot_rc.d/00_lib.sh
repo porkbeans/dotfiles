@@ -19,10 +19,10 @@ lspath() {
 
 add_path() {
   case ":${PATH}:" in
-  *:"$1":*) ;;
+    *:"$1":*) ;;
 
-  *)
-    export PATH="$1${PATH:+:$PATH}"
-    ;;
+    *)
+      export PATH="$1${PATH:+:$PATH}"
+      ;;
   esac
 }
