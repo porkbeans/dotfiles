@@ -1,6 +1,6 @@
-[genericSecret]
+[secret]
 command = "gopass"
+args = "cat"
 
 [diff]
-format = "git"
 pager = "diff-so-fancy"
