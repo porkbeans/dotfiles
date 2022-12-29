@@ -1,0 +1,13 @@
+set number
+set showmode
+set showtabline=2
+set showmatch
+set incsearch
+
+map \f :NERDTreeToggle<CR>
+
+call plug#begin('~/.vim/plugged')
+  Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
+  Plug 'vim-airline/vim-airline'
+  Plug 'junegunn/fzf.vim'
+call plug#end()
