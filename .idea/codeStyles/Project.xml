@@ -1,0 +1,15 @@
+<component name="ProjectCodeStyleConfiguration">
+  <code_scheme name="Project" version="173">
+    <GoCodeStyleSettings>
+      <option name="IMPORT_SORTING" value="GOIMPORTS" />
+      <option name="LOCAL_PACKAGE_PREFIXES" />
+    </GoCodeStyleSettings>
+    <Shell_Script>
+      <option name="SWITCH_CASES_INDENTED" value="true" />
+    </Shell_Script>
+    <codeStyleSettings language="yaml">
+      <option name="SPACE_WITHIN_BRACKETS" value="false" />
+      <option name="SPACE_WITHIN_BRACES" value="false" />
+    </codeStyleSettings>
+  </code_scheme>
+</component>
