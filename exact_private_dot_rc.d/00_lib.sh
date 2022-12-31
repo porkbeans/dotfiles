@@ -10,7 +10,13 @@ fi
 export SHELL_NAME
 
 has_command() {
-  command -v "$1" >/dev/null 2>&1
+  for command in "$@"; do
+    if ! command -v "${command}" >/dev/null 2>&1; then
+      return 1
+    fi
+  done
+
+  return 0
 }
 
 lspath() {
