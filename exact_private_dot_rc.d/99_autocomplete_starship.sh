@@ -1,5 +1,7 @@
 # shellcheck shell=sh
 if has_command starship; then
-  # https://github.com/starship/starship/issues/2806
-  eval "$(starship completions "${SHELL_NAME}" | sed '$d')"
+  case "${SHELL_NAME}" in
+    bash) eval "$(starship completions "${SHELL_NAME}")" ;;
+    zsh) starship completions "${SHELL_NAME}" | write_only_if_diff "${HOME}/.zsh/functions/_starship" ;;
+  esac
 fi

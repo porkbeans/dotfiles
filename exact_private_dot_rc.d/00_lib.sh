@@ -27,5 +27,22 @@ add_path() {
   if [[ ":${PATH}:" != *:"$1":* ]]; then
     export PATH="$1${PATH:+":${PATH}"}"
   fi
+}
 
+write_only_if_diff() {
+  filename="$1"
+  content="$(cat -)"
+
+  if [ ! -f "${filename}" ]; then
+    echo -n "${content}" >"${filename}"
+    return
+  fi
+
+  sum_file="$(sha512sum "$filename" | cut -d ' ' -f 1)"
+  sum_stdin=$(echo -n "${content}" | sha512sum - | cut -d ' ' -f 1)
+
+  if [ "${sum_file}" != "${sum_stdin}" ]; then
+    echo -n "${content}" >"${filename}"
+    return
+  fi
 }
