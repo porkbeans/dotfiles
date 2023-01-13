@@ -20,15 +20,12 @@ has_command() {
 }
 
 lspath() {
-  echo "${PATH}" | tr : '\n'
+  echo "${PATH}" | tr ':' '\n'
 }
 
 add_path() {
-  case ":${PATH}:" in
-    *:"$1":*) ;;
+  if [[ ":${PATH}:" != *:"$1":* ]]; then
+    export PATH="$1${PATH:+":${PATH}"}"
+  fi
 
-    *)
-      export PATH="$1${PATH:+:$PATH}"
-      ;;
-  esac
 }

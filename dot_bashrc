@@ -1,7 +1,9 @@
 # shellcheck shell=bash
 
 # If not running interactively, don't do anything
-[[ $- != *i* ]] && return
+if [[ "$-" != *i* ]]; then
+  return
+fi
 
 for file in "${HOME}"/.rc.d/*.sh; do
   # shellcheck disable=SC1090
