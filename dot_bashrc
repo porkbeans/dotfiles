@@ -1,14 +1,20 @@
 # shellcheck shell=bash
+# shellcheck disable=SC1090
+
+[ -f "${HOME}/.shenv" ] && . "${HOME}/.shenv"
 
 # If not running interactively, don't do anything
 if [[ "$-" != *i* ]]; then
+  log_shell_source "SOURCED BUT REJECTED: ${HOME}/.bashrc"
   return
 fi
 
+log_shell_source "${HOME}/.bashrc"
+
 for file in "${HOME}"/.rc.d/*.sh; do
-  # shellcheck disable=SC1090
-  if ! . "${file}"; then
-    echo "failed to source: ${file}"
-    break
+  if . "${file}"; then
+    log_shell_source "${file}"
+  else
+    log_shell_source "FAILED TO SOURCE: ${file}"
   fi
 done

@@ -1,0 +1,7 @@
+export ZDOTDIR="${HOME}/.zsh"
+
+[ -f "${HOME}/.shenv" ] && . "${HOME}/.shenv"
+
+fpath=("${HOME}/.zsh/functions" "${fpath[@]}")
+
+log_shell_source "${ZSH_EVAL_CONTEXT} ${ZDOTDIR}/.zshenv"

@@ -1,0 +1,23 @@
+# shellcheck disable=SC1090
+
+log_shell_source "${ZSH_EVAL_CONTEXT} ${ZDOTDIR}/.zshrc"
+
+autoload -U bashcompinit && bashcompinit
+autoload -Uz compinit && compinit
+
+bindkey '^[[H' beginning-of-line
+bindkey '^A' beginning-of-line
+bindkey '^[[F' end-of-line
+bindkey '^E' end-of-line
+bindkey '^[[3~' delete-char
+
+. "${ZDOTDIR:-${HOME}}/.antidote/antidote.zsh"
+log_shell_source "${ZDOTDIR:-${HOME}}/.antidote/antidote.zsh"
+
+for file in "${HOME}"/.rc.d/*.sh; do
+  if . "${file}"; then
+    log_shell_source "${file}"
+  else
+    log_shell_source "FAILED TO SOURCE: ${file}"
+  fi
+done

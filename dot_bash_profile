@@ -1,3 +1,5 @@
+[ -f "${HOME}/.shenv" ] && . "${HOME}/.shenv"
 
+log_shell_source "${HOME}/.bash_profile"
 
 [ -f "${HOME}/.bashrc" ] && . "${HOME}/.bashrc"
