@@ -1,24 +1,24 @@
 [user]
-	name = {{ (bitwarden "item" "github.com/porkbeans").login.username }}
-	email = {{ (bitwardenFields "item" "github.com/porkbeans").email.value }}
+  name = {{ (bitwarden "item" "github.com/porkbeans").login.username }}
+  email = {{ (bitwardenFields "item" "github.com/porkbeans").email.value }}
 [alias]
-	a = add
-	s = status
-	l = log --format='format:%cd %C(auto)%H%Creset%C(auto)%d%Creset %s'
-	d = diff
-	dw = diff --word-diff
-	dc = diff --cached
-	dcw = diff --cached --word-diff
-	amend = commit --amend
-	root = rev-parse --show-toplevel
+  a = add
+  s = status
+  l = log --format='format:%C(auto,blue)%cd%Creset %C(auto,green)%ae%Creset %C(auto)%H%Creset%C(auto)%d%Creset %s'
+  d = diff
+  dw = diff --word-diff
+  dc = diff --cached
+  dcw = diff --cached --word-diff
+  amend = commit --amend
+  root = rev-parse --show-toplevel
 [log]
-	date = iso-strict
+  date = iso-strict
 [pull]
-	ff = only
+  ff = only
 [init]
-	defaultBranch = main
+  defaultBranch = main
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
