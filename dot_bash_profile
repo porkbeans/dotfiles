@@ -1,5 +1,6 @@
-[ -f "${HOME}/.shenv" ] && . "${HOME}/.shenv"
-
-log_shell_source "${HOME}/.bash_profile"
+# shellcheck disable=SC1090
+for file in "${HOME}"/.env.d/*.sh; do
+  . "${file}"
+done
 
 [ -f "${HOME}/.bashrc" ] && . "${HOME}/.bashrc"

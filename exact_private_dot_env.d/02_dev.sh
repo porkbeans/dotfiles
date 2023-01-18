@@ -1,14 +1,13 @@
 # shellcheck shell=sh
+# shellcheck disable=SC2046
 
 export SEARCH_PATH="${HOME}/Repositories:${HOME}/Workspaces:${HOME}/Playgrounds"
 
 pyversions(){
-  # shellcheck disable=SC2046
   fd -FHI -t f ".python-version" $(echo "$SEARCH_PATH" | tr : '\n') | sort | xargs bat --paging never 2>/dev/null
 }
 
 rbversions(){
-  # shellcheck disable=SC2046
   fd -FHI -t f ".ruby-version" $(echo "$SEARCH_PATH" | tr : '\n') | sort | xargs bat --paging never 2>/dev/null
 }
 
