@@ -12,19 +12,14 @@ podman-image-refresh() {
   podman image prune -f
 }
 
-lxc-image-ls() {
+lxc-image-list() {
   lxc image list -f json |
-    jq -r '["NAME", "TYPE", "SIZE", "FINGERPRINT"], ([.[] | {"name": .update_source.alias, type, size, fingerprint}] | sort_by(.name, .type) | .[] | [.name, .type, .size, .fingerprint]) | @tsv' |
-    numfmt --to si --suffix B --field 3 --invalid ignore -d $'\t' |
-    column -ts $'\t' -R 3
+    jq -r '["NAME", "SOURCE", "TYPE", "DESC", "SIZE", "FINGERPRINT"], ([.[] | {"name": (.aliases | sort_by(.name)[0].name), "source": .update_source.alias, type, "desc": .properties.description, size, fingerprint}] | sort_by(.source, .type) | .[] | [.name, .source, .type, .desc, .size, .fingerprint]) | @tsv' |
+    numfmt --to si --suffix B --field 5 --invalid ignore -d $'\t' |
+    column -ts $'\t' -R 5
 }
 
-lxc-image-ll() {
-  lxc image list -f json |
-    jq -r '["NAME", "TYPE", "DESC", "SIZE", "FINGERPRINT"], ([.[] | {"name": .update_source.alias, type, "desc": .properties.description, size, fingerprint}] | sort_by(.name, .type) | .[] | [.name, .type, .desc, .size, .fingerprint]) | @tsv' |
-    numfmt --to si --suffix B --field 4 --invalid ignore -d $'\t' |
-    column -ts $'\t' -R 4
-}
+alias lxc-image-ls=lxc-image-list
 
 lxc-image-refresh() {
   # shellcheck disable=SC2046
