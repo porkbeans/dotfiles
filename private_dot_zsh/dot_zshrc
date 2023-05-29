@@ -10,6 +10,7 @@ bindkey '^E' end-of-line
 bindkey '^[[3~' delete-char
 
 . "${ZDOTDIR:-${HOME}}/.antidote/antidote.zsh"
+antidote load
 
 for file in "${HOME}"/.rc.d/*.sh /etc/bash_completion.d/*; do
   . "${file}"
