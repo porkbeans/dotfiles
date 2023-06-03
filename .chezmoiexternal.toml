@@ -10,6 +10,12 @@ url = "https://get.sdkman.io?rcupdate=false"
 executable = true
 refreshPeriod = "168h"
 
+[".local/bin/kerl"]
+type = "file"
+url = "https://raw.githubusercontent.com/kerl/kerl/master/kerl"
+executable = true
+refreshPeriod = "168h"
+
 [".vim/autoload/plug.vim"]
 type = "file"
 url = "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
