@@ -10,6 +10,12 @@ url = "https://get.sdkman.io?rcupdate=false"
 executable = true
 refreshPeriod = "168h"
 
+[".local/bin/slack-init"]
+type = "file"
+url = "https://downloads.slack-edge.com/slack-cli/install.sh"
+executable = true
+refreshPeriod = "168h"
+
 [".local/bin/kerl"]
 type = "file"
 url = "https://raw.githubusercontent.com/kerl/kerl/master/kerl"
