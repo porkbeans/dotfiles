@@ -3,12 +3,18 @@
 autoload -U bashcompinit && bashcompinit
 autoload -Uz compinit && compinit
 
+# Home / End
 bindkey '^[[H' beginning-of-line
 bindkey '^[[F' end-of-line
-bindkey '^A' beginning-of-line
-bindkey '^E' end-of-line
+
+# Delete
 bindkey '^[[3~' delete-char
 
+# Combinations
+bindkey '^A' beginning-of-line
+bindkey '^E' end-of-line
+
+# shellcheck source=~/.antidote/antidote.zsh
 . "${ZDOTDIR:-${HOME}}/.antidote/antidote.zsh"
 antidote load
 
