@@ -4,6 +4,7 @@
 export SEARCH_PATH="${HOME}/Repositories:${HOME}/Workspaces:${HOME}/Playgrounds"
 
 pyversions(){
+  rg -H --no-messages -g .envrc 'layout pyenv' $(echo "$SEARCH_PATH" | tr : '\n')
   fd -FHI -t f ".python-version" $(echo "$SEARCH_PATH" | tr : '\n') | sort | xargs bat --paging never 2>/dev/null
 }
 
