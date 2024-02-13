@@ -22,6 +22,12 @@ url = "https://raw.githubusercontent.com/kerl/kerl/master/kerl"
 executable = true
 refreshPeriod = "168h"
 
+[".local/bin/k0s-init"]
+type = "file"
+url = "https://get.k0s.sh"
+executable = true
+refreshPeriod = "168h"
+
 [".vim/autoload/plug.vim"]
 type = "file"
 url = "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
