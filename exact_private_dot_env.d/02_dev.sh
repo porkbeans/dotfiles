@@ -12,6 +12,10 @@ rbversions(){
   fd -FHI -t f ".ruby-version" $(echo "$SEARCH_PATH" | tr : '\n') | sort | xargs bat --paging never 2>/dev/null
 }
 
+lsport(){
+  ss -tunl | jc --ss | jq -r '.[] | "\(.netid) \(.local_port)"' | xargs printf '%s\t%5s\n' | LC_ALL=C sort -du
+}
+
 has_logged_in() {
   case "$1" in
     aws)
