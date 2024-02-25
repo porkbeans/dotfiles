@@ -1,4 +1,4 @@
-# shellcheck shell=sh
+# shellcheck shell=bash
 
 export DOCKER_CONTENT_TRUST=0
 
