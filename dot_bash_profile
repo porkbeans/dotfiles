@@ -1,6 +1,6 @@
-# shellcheck disable=SC1090
+# shellcheck shell=bash disable=SC1090,SC1091
 for file in "${HOME}"/.env.d/*.sh; do
-  . "${file}"
+  source "${file}"
 done
 
-[ -f "${HOME}/.bashrc" ] && . "${HOME}/.bashrc"
+[ -f "${HOME}/.bashrc" ] && source "${HOME}/.bashrc"

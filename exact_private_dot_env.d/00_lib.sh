@@ -1,4 +1,4 @@
-# shellcheck shell=sh
+# shellcheck shell=bash
 if [ -n "${BASH_VERSION}" ]; then
   SHELL_NAME="bash"
 elif [ -n "${ZSH_VERSION}" ]; then
@@ -24,7 +24,7 @@ lspath() {
 }
 
 add_path() {
-  if [[ ":${PATH}:" != *:"$1":* ]]; then
+  if expr ":${PATH}:" : "*:\"$1\":*" >/dev/null ; then
     export PATH="$1${PATH:+":${PATH}"}"
   fi
 }
@@ -34,15 +34,15 @@ write_only_if_diff() {
   content="$(cat -)"
 
   if [ ! -f "${filename}" ]; then
-    echo -n "${content}" >"${filename}"
+    printf '%s' "${content}" >"${filename}"
     return
   fi
 
   sum_file="$(sha512sum "$filename" | cut -d ' ' -f 1)"
-  sum_stdin=$(echo -n "${content}" | sha512sum - | cut -d ' ' -f 1)
+  sum_stdin=$(printf '%s' "${content}" | sha512sum - | cut -d ' ' -f 1)
 
   if [ "${sum_file}" != "${sum_stdin}" ]; then
-    echo -n "${content}" >"${filename}"
+    printf '%s' "${content}" >"${filename}"
     return
   fi
 }

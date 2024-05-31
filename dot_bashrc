@@ -1,7 +1,7 @@
 # shellcheck shell=bash
 # shellcheck disable=SC1090
 for file in "${HOME}"/.env.d/*.sh; do
-  . "${file}"
+  source "${file}"
 done
 
 # If not running interactively, don't do anything
@@ -10,5 +10,5 @@ if [[ "$-" != *i* ]]; then
 fi
 
 for file in "${HOME}"/.rc.d/*.sh; do
-  . "${file}"
+  source "${file}"
 done

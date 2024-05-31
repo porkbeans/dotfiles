@@ -1,4 +1,4 @@
-# shellcheck disable=SC1090
+# shellcheck shell=bash disable=SC1090
 
 autoload -U bashcompinit && bashcompinit
 autoload -Uz compinit && compinit
@@ -15,9 +15,9 @@ bindkey '^A' beginning-of-line
 bindkey '^E' end-of-line
 
 # shellcheck source=~/.antidote/antidote.zsh
-. "${ZDOTDIR:-${HOME}}/.antidote/antidote.zsh"
+source "${ZDOTDIR:-${HOME}}/.antidote/antidote.zsh"
 antidote load
 
 for file in "${HOME}"/.rc.d/*.sh /etc/bash_completion.d/*; do
-  . "${file}"
+  source "${file}"
 done
