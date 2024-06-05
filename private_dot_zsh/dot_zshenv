@@ -1,8 +1,17 @@
 # shellcheck shell=bash disable=SC1090
 export ZDOTDIR="${HOME}/.zsh"
 
+export DEBUG_SOURCE=0
+
+source_debug() {
+  if [ $DEBUG_SOURCE -ne 0 ]; then
+    echo "Loading: $1"
+  fi
+  source "$1"
+}
+
 for file in "${HOME}"/.env.d/*.sh; do
-  source "${file}"
+  source_debug "${file}"
 done
 
 fpath=("${HOME}/.zsh/functions" "${fpath[@]}")
