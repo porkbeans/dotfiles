@@ -18,6 +18,6 @@ bindkey '^E' end-of-line
 source_debug "${ZDOTDIR:-${HOME}}/.antidote/antidote.zsh"
 antidote load
 
-for file in "${HOME}"/.rc.d/*.sh /etc/bash_completion.d/*; do
+for file in "${HOME}"/.rc.d/*.sh; do
   source_debug "${file}"
 done
