@@ -24,7 +24,7 @@ lspath() {
 }
 
 add_path() {
-  if expr ":${PATH}:" : "*:\"$1\":*" >/dev/null ; then
+  if [[ ":${PATH}:" != *:"$1":* ]] ; then
     export PATH="$1${PATH:+":${PATH}"}"
   fi
 }
