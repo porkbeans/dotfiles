@@ -1,7 +1,7 @@
 # dotfiles
 My dotfiles managed with chezmoi.
 
-**DO NOT** use this repository as is because it contains some tweaks for me.  
+**DO NOT** use this repository as is because it contains some tweaks for me.
 
 ## Requirements
 
