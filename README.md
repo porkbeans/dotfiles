@@ -7,7 +7,7 @@ My dotfiles managed with chezmoi.
 
 ### Tools
 - [git](https://git-scm.com/downloads)
-- [bitwarden](https://github.com/bitwarden/cli) for secrets management
+- [1Password](https://developer.1password.com/docs/cli) for secrets management
 - [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy) for prettified diff
 - [chezmoi](https://github.com/twpayne/chezmoi) for dotfiles management
 - [gibo](https://github.com/simonwhitaker/gibo) for .gitignore

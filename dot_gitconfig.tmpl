@@ -1,6 +1,6 @@
 [user]
-  name = {{ (bitwarden "item" "github.com/porkbeans").login.username }}
-  email = {{ (bitwardenFields "item" "github.com/porkbeans").email.value }}
+  name = {{ (onepasswordRead "op://personal/github.com/username") }}
+  email = {{ (onepasswordRead "op://personal/github.com/email") }}
 [alias]
   a = add
   s = status
