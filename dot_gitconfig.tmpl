@@ -1,6 +1,6 @@
 [user]
-  name = {{ (onepasswordRead "op://personal/github.com/username") }}
-  email = {{ (onepasswordRead "op://personal/github.com/emails/primary") }}
+  name = {{ .name }}
+  email = {{ .email }}
 [alias]
   a = add
   s = status

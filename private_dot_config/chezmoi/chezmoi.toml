@@ -1,6 +1,0 @@
-[secret]
-command = "gopass"
-args = "cat"
-
-[diff]
-pager = "diff-so-fancy"

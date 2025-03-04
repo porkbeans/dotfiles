@@ -1,0 +1,12 @@
+{{ $name := promptStringOnce . "name" "What is your username for git" -}}
+{{ $email := promptStringOnce . "email" "What is your email address for git" -}}
+[secret]
+command = "gopass"
+args = "cat"
+
+[diff]
+pager = "diff-so-fancy"
+
+[data]
+name = {{ $name | quote }}
+email = {{ $email | quote }}
