@@ -1,15 +1,3 @@
-# shellcheck shell=bash disable=SC1090,SC1091
-export DEBUG_SOURCE=0
+# shellcheck shell=bash disable=SC1091
 
-source_debug() {
-  if [ $DEBUG_SOURCE -ne 0 ]; then
-    echo "Loading: $1"
-  fi
-  source "$1"
-}
-
-for file in "${HOME}"/.env.d/*.sh; do
-  source_debug "${file}"
-done
-
-[ -f "${HOME}/.bashrc" ] && source_debug "${HOME}/.bashrc"
+[ -f "${HOME}/.bashrc" ] && source "${HOME}/.bashrc"

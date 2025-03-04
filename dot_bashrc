@@ -1,5 +1,13 @@
-# shellcheck shell=bash
-# shellcheck disable=SC1090
+# shellcheck shell=bash disable=SC1090
+export DEBUG_SOURCE=0
+
+source_debug() {
+  if [ $DEBUG_SOURCE -ne 0 ]; then
+    echo "Loading: $1"
+  fi
+  source "$1"
+}
+
 for file in "${HOME}"/.env.d/*.sh; do
   source_debug "${file}"
 done
