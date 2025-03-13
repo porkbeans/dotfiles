@@ -11,6 +11,7 @@ My dotfiles managed with chezmoi.
 - [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy) for prettified diff
 - [chezmoi](https://github.com/twpayne/chezmoi) for dotfiles management
 - [gibo](https://github.com/simonwhitaker/gibo) for .gitignore
+- [gcp2aws](https://github.com/porkbeans/gcp2aws) in `/usr/local/bin` for AWS CLI authentication
 
 ### Preparation
 
