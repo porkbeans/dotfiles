@@ -16,6 +16,7 @@ My dotfiles managed with chezmoi.
 ### Preparation
 
 - Add ssh key to GitHub
+- Sign in to 1Password CLI
 
 ## Installation
 ```shell script
