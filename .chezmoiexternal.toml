@@ -4,6 +4,12 @@ url = "https://sh.rustup.rs"
 executable = true
 refreshPeriod = "168h"
 
+[".local/bin/choosenim-init"]
+type = "file"
+url = "https://nim-lang.org/choosenim/init.sh"
+executable = true
+refreshPeriod = "168h"
+
 [".local/bin/sdkman-init"]
 type = "file"
 url = "https://get.sdkman.io?rcupdate=false"
