@@ -16,6 +16,12 @@ url = "https://get.sdkman.io?rcupdate=false"
 executable = true
 refreshPeriod = "168h"
 
+[".local/bin/dagger-init"]
+type = "file"
+url = "https://dl.dagger.io/dagger/install.sh"
+executable = true
+refreshPeriod = "168h"
+
 [".local/bin/slack-init"]
 type = "file"
 url = "https://downloads.slack-edge.com/slack-cli/install.sh"
