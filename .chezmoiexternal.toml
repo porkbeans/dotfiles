@@ -4,6 +4,12 @@ url = "https://sh.rustup.rs"
 executable = true
 refreshPeriod = "168h"
 
+[".local/bin/uv-init"]
+type = "file"
+url = "https://astral.sh/uv/install.sh"
+executable = true
+refreshPeriod = "168h"
+
 [".local/bin/sdkman-init"]
 type = "file"
 url = "https://get.sdkman.io?rcupdate=false"
