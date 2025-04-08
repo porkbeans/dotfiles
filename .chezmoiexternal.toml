@@ -4,27 +4,21 @@ url = "https://sh.rustup.rs"
 executable = true
 refreshPeriod = "168h"
 
-[".local/bin/choosenim-init"]
-type = "file"
-url = "https://nim-lang.org/choosenim/init.sh"
-executable = true
-refreshPeriod = "168h"
-
 [".local/bin/sdkman-init"]
 type = "file"
 url = "https://get.sdkman.io?rcupdate=false"
 executable = true
 refreshPeriod = "168h"
 
-[".local/bin/dagger-init"]
+[".local/bin/choosenim-init"]
 type = "file"
-url = "https://dl.dagger.io/dagger/install.sh"
+url = "https://nim-lang.org/choosenim/init.sh"
 executable = true
 refreshPeriod = "168h"
 
-[".local/bin/slack-init"]
+[".local/bin/dagger-init"]
 type = "file"
-url = "https://downloads.slack-edge.com/slack-cli/install.sh"
+url = "https://dl.dagger.io/dagger/install.sh"
 executable = true
 refreshPeriod = "168h"
 
@@ -37,6 +31,12 @@ refreshPeriod = "168h"
 [".local/bin/k0s-init"]
 type = "file"
 url = "https://get.k0s.sh"
+executable = true
+refreshPeriod = "168h"
+
+[".local/bin/slack-init"]
+type = "file"
+url = "https://downloads.slack-edge.com/slack-cli/install.sh"
 executable = true
 refreshPeriod = "168h"
 
