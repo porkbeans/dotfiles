@@ -10,6 +10,12 @@ url = "https://astral.sh/uv/install.sh"
 executable = true
 refreshPeriod = "168h"
 
+[".local/bin/volta-init"]
+type = "file"
+url = "https://get.volta.sh"
+executable = true
+refreshPeriod = "168h"
+
 [".local/bin/sdkman-init"]
 type = "file"
 url = "https://get.sdkman.io?rcupdate=false"
