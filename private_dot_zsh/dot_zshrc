@@ -13,6 +13,7 @@ bindkey '^[[3~' delete-char
 # Combinations
 bindkey '^A' beginning-of-line
 bindkey '^E' end-of-line
+bindkey '^R' history-incremental-search-backward
 
 # shellcheck source=~/.antidote/antidote.zsh
 source_debug "${ZDOTDIR:-${HOME}}/.antidote/antidote.zsh"
