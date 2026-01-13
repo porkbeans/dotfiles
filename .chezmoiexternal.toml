@@ -52,6 +52,18 @@ url = "https://get.k0s.sh"
 executable = true
 refreshPeriod = "168h"
 
+[".local/bin/hcloud"]
+type = "archive-file"
+url = {{ gitHubLatestReleaseAssetURL "hetznercloud/cli" "hcloud-linux-amd64.tar.gz" | quote }}
+executable = true
+path = "hcloud"
+
+[".local/bin/ovhcloud"]
+type = "archive-file"
+url = {{ gitHubLatestReleaseAssetURL "ovh/ovhcloud-cli" "ovhcloud-cli_Linux_x86_64.tar.gz" | quote }}
+executable = true
+path = "ovhcloud"
+
 [".local/bin/slack-init"]
 type = "file"
 url = "https://downloads.slack-edge.com/slack-cli/install.sh"
