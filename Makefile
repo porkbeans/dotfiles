@@ -59,3 +59,12 @@ volta-tool:
 
 dagger-init:
 	BIN_DIR="${HOME}/.local/bin" dagger-init
+
+agent-tool:
+	claude-init
+	kiro-init
+	volta install \
+		@openai/codex@latest \
+		@google/gemini-cli@latest \
+		@google/jules@latest
+	uv tool install specify-cli --from git+https://github.com/github/spec-kit.git

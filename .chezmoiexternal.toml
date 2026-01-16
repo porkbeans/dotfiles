@@ -70,6 +70,18 @@ url = "https://downloads.slack-edge.com/slack-cli/install.sh"
 executable = true
 refreshPeriod = "168h"
 
+[".local/bin/claude-init"]
+type = "file"
+url = "https://claude.ai/install.sh"
+executable = true
+refreshPeriod = "168h"
+
+[".local/bin/kiro-init"]
+type = "file"
+url = "https://cli.kiro.dev/install"
+executable = true
+refreshPeriod = "168h"
+
 [".vim/autoload/plug.vim"]
 type = "file"
 url = "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
