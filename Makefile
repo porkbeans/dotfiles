@@ -61,8 +61,8 @@ dagger-init:
 	BIN_DIR="${HOME}/.local/bin" dagger-init
 
 agent-tool:
-	claude-init
-	kiro-init
+	claude-init || true
+	kiro-init || true
 	volta install \
 		@openai/codex@latest \
 		@google/gemini-cli@latest \
