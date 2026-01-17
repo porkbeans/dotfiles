@@ -42,6 +42,7 @@ uv-tool:
 	uv tool install sqlite-utils
 	uv tool install git-remote-codecommit
 	uv tool install git-remote-s3
+	uv tool install gam7
 	uv tool install organize-tool
 	uv tool install ghtopdep
 
