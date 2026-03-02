@@ -56,7 +56,8 @@ volta-tool:
 		npm@latest \
 		yarn@latest \
 		typescript@latest \
-		typescript-language-server@latest
+		typescript-language-server@latest \
+		tsx@latest
 
 dagger-init:
 	BIN_DIR="${HOME}/.local/bin" dagger-init
