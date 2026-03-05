@@ -1,5 +1,5 @@
 .PHONY: diff diff-externals diff-all apply apply-externals apply-all
-.PHONY: rustup-init rustup cargo uv-init uv uv-tool volta-init volta volta-tool dagger-init
+.PHONY: rustup-init rustup cargo uv-init uv uv-tool volta-init volta volta-tool google-tool dagger-init agent-tool
 
 diff:
 	chezmoi diff -x externals -v
@@ -42,7 +42,6 @@ uv-tool:
 	uv tool install sqlite-utils
 	uv tool install git-remote-codecommit
 	uv tool install git-remote-s3
-	uv tool install gam7
 	uv tool install organize-tool
 	uv tool install ghtopdep
 
@@ -58,6 +57,10 @@ volta-tool:
 		typescript@latest \
 		typescript-language-server@latest \
 		tsx@latest
+
+google-tool:
+	volta install '@googleworkspace/cli@latest'
+	uv tool install gam7
 
 dagger-init:
 	BIN_DIR="${HOME}/.local/bin" dagger-init
