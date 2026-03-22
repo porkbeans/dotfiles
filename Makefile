@@ -1,5 +1,5 @@
 .PHONY: diff diff-externals diff-all apply apply-externals apply-all
-.PHONY: rustup-init rustup cargo uv-init uv uv-tool volta-init volta volta-tool google-tool dagger-init agent-tool
+.PHONY: rustup-init rustup cargo uv-init uv-tool mise-init mise-tool google-tool dagger-init agent-tool
 
 diff:
 	chezmoi diff -x externals -v
@@ -46,21 +46,23 @@ uv-tool:
 	uv tool install organize-tool
 	uv tool install ghtopdep
 
-volta-init:
-	volta-init
+mise-init:
+	mise-init
 
-volta-tool:
-	volta install \
+mise-tool:
+	mise use -g \
 		node@latest \
-		node@lts \
-		npm@latest \
-		yarn@latest \
-		typescript@latest \
-		typescript-language-server@latest \
-		tsx@latest
+		npm:typescript@latest \
+		npm:typescript-language-server@latest \
+		npm:tsx@latest \
+		bun@latest \
+		deno@latest \
+		erlang@latest \
+		elixir \
+		elm@latest
 
 google-tool:
-	volta install '@googleworkspace/cli@latest'
+	mise use -g npm:@googleworkspace/cli@latest
 	uv tool install gam7
 
 dagger-init:
@@ -69,9 +71,9 @@ dagger-init:
 agent-tool:
 	claude-init || true
 	kiro-init || true
-	volta install \
-		@openai/codex@latest \
-		@google/gemini-cli@latest \
-		@google/jules@latest
+	mise use -g \
+		npm:@openai/codex@latest \
+		npm:@google/gemini-cli@latest \
+		npm:@google/jules@latest
 	uv tool install specify-cli --from git+https://github.com/github/spec-kit.git
 	coderabbit-init || true
