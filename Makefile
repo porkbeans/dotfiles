@@ -29,6 +29,7 @@ cargo:
 	cargo install --locked flamegraph
 	cargo install --locked cargo-geiger
 	cargo install --locked cargo-expand
+	cargo install --locked usage-cli
 
 uv-init:
 	UV_NO_MODIFY_PATH=1 uv-init -v
