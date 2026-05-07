@@ -1,4 +1,4 @@
-.PHONY: diff diff-externals diff-all apply apply-externals apply-all
+.PHONY: diff diff-externals diff-all apply apply-externals apply-all update-tools
 .PHONY: rustup-init rustup cargo uv-init uv-tool mise-init mise-tool google-tool dagger-init agent-tool
 
 diff:
@@ -18,6 +18,14 @@ apply-externals:
 
 apply-all:
 	chezmoi apply -v
+
+update-tools:
+	mise self-update
+	rustup self update
+	uv self update
+	sdk selfupdate
+	ghcup upgrade
+	choosenim update self
 
 rustup-init:
 	rustup-init -c rust-analyzer --no-modify-path -v -y
