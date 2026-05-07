@@ -1,6 +1,8 @@
 .PHONY: diff diff-externals diff-all apply apply-externals apply-all update-tools
 .PHONY: rustup-init rustup cargo uv-init uv-tool mise-init mise-tool google-tool dagger-init agent-tool
 
+.ONESHELL:
+
 diff:
 	chezmoi diff -x externals -v
 
@@ -68,6 +70,27 @@ mise-tool:
 		erlang@latest \
 		elixir \
 		elm@latest
+
+sdkman-init:
+	sdkman-init
+
+sdkman-tool:
+	. "${HOME}/.sdkman/bin/sdkman-init.sh"
+	sdk install gradle
+	sdk install groovy
+	sdk install quarkus
+	sdk install kotlin
+	sdk install sbt
+	sdk install visualvm
+
+sdkman-upgrade:
+	. "${HOME}/.sdkman/bin/sdkman-init.sh"
+	sdk upgrade gradle
+	sdk upgrade groovy
+	sdk upgrade quarkus
+	sdk upgrade kotlin
+	sdk upgrade sbt
+	sdk upgrade visualvm
 
 google-tool:
 	mise use -g npm:@googleworkspace/cli@latest
