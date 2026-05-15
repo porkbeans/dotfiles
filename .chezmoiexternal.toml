@@ -70,6 +70,12 @@ url = "https://downloads.slack-edge.com/slack-cli/install.sh"
 executable = true
 refreshPeriod = "168h"
 
+[".local/bin/ntn-init"]
+type = "file"
+url = "https://ntn.dev"
+executable = true
+refreshPeriod = "168h"
+
 [".local/bin/claude-init"]
 type = "file"
 url = "https://claude.ai/install.sh"

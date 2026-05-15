@@ -1,5 +1,5 @@
 .PHONY: diff diff-externals diff-all apply apply-externals apply-all update-tools
-.PHONY: rustup-init rustup cargo uv-init uv-tool mise-init mise-tool google-tool dagger-init agent-tool
+.PHONY: rustup-init rustup cargo uv-init uv-tool mise-init mise-tool google-tool dagger-init agent-tool notion-init
 
 .ONESHELL:
 
@@ -108,3 +108,6 @@ agent-tool:
 		npm:@google/jules@latest
 	uv tool install specify-cli --from git+https://github.com/github/spec-kit.git
 	coderabbit-init || true
+
+notion-init:
+	NTN_INSTALL_DIR="${HOME}/.local/bin" ntn-init
