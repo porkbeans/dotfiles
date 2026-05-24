@@ -105,7 +105,8 @@ agent-tool:
 	mise use -g \
 		npm:@openai/codex@latest \
 		npm:@google/gemini-cli@latest \
-		npm:@google/jules@latest
+		npm:@google/jules@latest \
+		npm:agent-browser@latest
 	uv tool install specify-cli --from git+https://github.com/github/spec-kit.git
 	uv tool install hermes-agent
 	coderabbit-init || true
