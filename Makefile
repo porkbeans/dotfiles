@@ -107,6 +107,7 @@ agent-tool:
 		npm:@google/gemini-cli@latest \
 		npm:@google/jules@latest
 	uv tool install specify-cli --from git+https://github.com/github/spec-kit.git
+	uv tool install hermes-agent
 	coderabbit-init || true
 
 notion-init:

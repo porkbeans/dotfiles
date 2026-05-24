@@ -10,3 +10,9 @@ if has_command jules; then
     bash | zsh) eval "$(jules completion "${SHELL_NAME}")"
   esac
 fi
+
+if has_command hermes; then
+  case "${SHELL_NAME}" in
+    bash | zsh) eval "$(hermes completion "${SHELL_NAME}")"
+  esac
+fi
