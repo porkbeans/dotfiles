@@ -82,6 +82,12 @@ url = "https://claude.ai/install.sh"
 executable = true
 refreshPeriod = "168h"
 
+[".local/bin/agy-init"]
+type = "file"
+url = "https://antigravity.google/cli/install.sh"
+executable = true
+refreshPeriod = "168h"
+
 [".local/bin/kiro-init"]
 type = "file"
 url = "https://cli.kiro.dev/install"
