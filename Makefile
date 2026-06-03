@@ -33,6 +33,11 @@ update-tools:
 	choosenim update self
 	ntn update
 
+update-agents:
+	claude update
+	agy update
+	coderabbit update
+
 rustup-init:
 	rustup-init -c rust-analyzer --no-modify-path -v -y
 
@@ -105,6 +110,7 @@ dagger-init:
 
 agent-tool:
 	claude-init || true
+	agy install --skip-path || true
 	mise use -g \
 		npm:@openai/codex@latest \
 		npm:@google/gemini-cli@latest \
