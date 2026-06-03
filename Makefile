@@ -23,11 +23,15 @@ apply-all:
 
 update-tools:
 	mise self-update
+	mise upgrade
 	rustup self update
+	rustup update --no-self-update
 	uv self update
+	uv tool upgrade --all
 	sdk selfupdate
 	ghcup upgrade
 	choosenim update self
+	ntn update
 
 rustup-init:
 	rustup-init -c rust-analyzer --no-modify-path -v -y
