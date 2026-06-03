@@ -101,7 +101,6 @@ dagger-init:
 
 agent-tool:
 	claude-init || true
-	kiro-init || true
 	mise use -g \
 		npm:@openai/codex@latest \
 		npm:@google/gemini-cli@latest \

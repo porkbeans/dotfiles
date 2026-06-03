@@ -88,12 +88,6 @@ url = "https://antigravity.google/cli/install.sh"
 executable = true
 refreshPeriod = "168h"
 
-[".local/bin/kiro-init"]
-type = "file"
-url = "https://cli.kiro.dev/install"
-executable = true
-refreshPeriod = "168h"
-
 [".local/bin/coderabbit-init"]
 type = "file"
 url = "https://cli.coderabbit.ai/install.sh"
