@@ -31,6 +31,7 @@ update-tools:
 	sdk selfupdate
 	ghcup upgrade
 	choosenim update self
+	android update
 	ntn update
 
 update-agents:
@@ -100,6 +101,9 @@ sdkman-upgrade:
 	sdk upgrade kotlin
 	sdk upgrade sbt
 	sdk upgrade visualvm
+
+android-init:
+	android-init
 
 google-tool:
 	mise use -g npm:@googleworkspace/cli@latest
