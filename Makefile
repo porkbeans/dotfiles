@@ -50,6 +50,7 @@ cargo:
 	cargo install --locked cargo-geiger
 	cargo install --locked cargo-expand
 	cargo install --locked usage-cli
+	cargo install --locked worktrunk
 
 uv-init:
 	UV_NO_MODIFY_PATH=1 uv-init -v
@@ -65,6 +66,7 @@ uv-tool:
 	uv tool install git-remote-s3
 	uv tool install organize-tool
 	uv tool install ghtopdep
+	uv tool install graphifyy
 
 mise-init:
 	mise-init
