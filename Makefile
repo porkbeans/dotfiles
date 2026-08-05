@@ -1,5 +1,7 @@
-.PHONY: diff diff-externals diff-all apply apply-externals apply-all update-tools
-.PHONY: rustup-init rustup cargo uv-init uv-tool mise-init mise-tool google-tool dagger-init agent-tool notion-init
+.PHONY: diff diff-externals diff-all apply apply-externals apply-all
+.PHONY: rustup-init rustup cargo uv-init uv-tools mise-init mise-tools sdkman-init sdkman-tools sdkman-upgrade
+.PHONY: cli-tools google-tools update-tools agent-tools update-agents
+.PHONY: android-init dagger-init notion-init
 
 .ONESHELL:
 
@@ -21,25 +23,6 @@ apply-externals:
 apply-all:
 	chezmoi apply -v
 
-update-tools:
-	mise self-update
-	mise upgrade
-	rustup self update
-	rustup update --no-self-update
-	cargo install-update -a
-	uv self update
-	uv tool upgrade --all
-	sdk selfupdate
-	ghcup upgrade
-	choosenim update self
-	android update
-	ntn update
-
-update-agents:
-	claude update
-	agy update
-	coderabbit update
-
 rustup-init:
 	rustup-init -c rust-analyzer --no-modify-path -v -y
 
@@ -50,31 +33,20 @@ cargo:
 	cargo install --locked cargo-update
 	cargo install --locked cargo-geiger
 	cargo install --locked cargo-expand
-	cargo install --locked flamegraph
-	cargo install --locked usage-cli
-	cargo install --locked worktrunk
-	cargo install --locked mq-run
 
 uv-init:
 	UV_NO_MODIFY_PATH=1 uv-init -v
 
-uv-tool:
+uv-tools:
 	uv tool install python-language-server
 	uv tool install poetry
-	uv tool install licensecheck
 	uv tool install cookiecutter
 	uv tool install copier
-	uv tool install sqlite-utils
-	uv tool install git-remote-codecommit
-	uv tool install git-remote-s3
-	uv tool install organize-tool
-	uv tool install ghtopdep
-	uv tool install graphifyy
 
 mise-init:
 	mise-init
 
-mise-tool:
+mise-tools:
 	mise use -g \
 		node@latest \
 		npm:typescript@latest \
@@ -89,7 +61,7 @@ mise-tool:
 sdkman-init:
 	sdkman-init
 
-sdkman-tool:
+sdkman-tools:
 	. "${HOME}/.sdkman/bin/sdkman-init.sh"
 	sdk install gradle
 	sdk install groovy
@@ -107,17 +79,37 @@ sdkman-upgrade:
 	sdk upgrade sbt
 	sdk upgrade visualvm
 
-android-init:
-	android-init
+cli-tools:
+	cargo install --locked flamegraph
+	cargo install --locked usage-cli
+	cargo install --locked worktrunk
+	cargo install --locked mq-run
+	uv tool install sqlite-utils
+	uv tool install git-remote-codecommit
+	uv tool install git-remote-s3
+	uv tool install organize-tool
+	uv tool install ghtopdep
+	uv tool install licensecheck
 
-google-tool:
+google-tools:
 	mise use -g npm:@googleworkspace/cli@latest
 	uv tool install gam7
 
-dagger-init:
-	BIN_DIR="${HOME}/.local/bin" dagger-init
+update-tools:
+	mise self-update
+	mise upgrade
+	rustup self update
+	rustup update --no-self-update
+	cargo install-update -a
+	uv self update
+	uv tool upgrade --all
+	sdk selfupdate
+	ghcup upgrade
+	choosenim update self
+	android update
+	ntn update
 
-agent-tool:
+agent-tools:
 	claude-init || true
 	agy install --skip-path || true
 	mise use -g \
@@ -126,7 +118,19 @@ agent-tool:
 		npm:agent-browser@latest
 	uv tool install specify-cli --from git+https://github.com/github/spec-kit.git
 	uv tool install hermes-agent
+	uv tool install graphifyy
 	coderabbit-init || true
+
+update-agents:
+	claude update
+	agy update
+	coderabbit update
+
+android-init:
+	android-init
+
+dagger-init:
+	BIN_DIR="${HOME}/.local/bin" dagger-init
 
 notion-init:
 	NTN_INSTALL_DIR="${HOME}/.local/bin" ntn-init
