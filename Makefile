@@ -26,6 +26,7 @@ update-tools:
 	mise upgrade
 	rustup self update
 	rustup update --no-self-update
+	cargo install-update -a
 	uv self update
 	uv tool upgrade --all
 	sdk selfupdate
@@ -47,6 +48,7 @@ rustup:
 
 cargo:
 	cargo install --locked flamegraph
+	cargo install --locked cargo-update
 	cargo install --locked cargo-geiger
 	cargo install --locked cargo-expand
 	cargo install --locked usage-cli
