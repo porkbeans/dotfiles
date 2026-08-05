@@ -47,10 +47,10 @@ rustup:
 	rustup toolchain install stable beta nightly
 
 cargo:
-	cargo install --locked flamegraph
 	cargo install --locked cargo-update
 	cargo install --locked cargo-geiger
 	cargo install --locked cargo-expand
+	cargo install --locked flamegraph
 	cargo install --locked usage-cli
 	cargo install --locked worktrunk
 	cargo install --locked mq-run
