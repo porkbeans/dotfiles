@@ -53,6 +53,7 @@ cargo:
 	cargo install --locked cargo-expand
 	cargo install --locked usage-cli
 	cargo install --locked worktrunk
+	cargo install --locked mq-run
 
 uv-init:
 	UV_NO_MODIFY_PATH=1 uv-init -v
