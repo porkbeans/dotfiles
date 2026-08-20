@@ -43,6 +43,9 @@ uv-tools:
 	uv tool install cookiecutter
 	uv tool install copier
 
+rv-init:
+	rv-init --no-modify-path
+
 mise-init:
 	mise-init
 
