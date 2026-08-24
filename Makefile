@@ -123,6 +123,8 @@ agent-tools:
 	uv tool install specify-cli --from git+https://github.com/github/spec-kit.git
 	uv tool install hermes-agent
 	uv tool install graphifyy
+	uv tool install git+https://github.com/NVIDIA/skillspector.git
+	uv tool install cisco-ai-skill-scanner
 	coderabbit-init || true
 
 update-agents:
