@@ -2,6 +2,7 @@
 .PHONY: rustup-init rustup cargo uv-init uv-tools mise-init mise-tools sdkman-init sdkman-tools sdkman-upgrade
 .PHONY: cli-tools google-tools update-tools agent-tools update-agents
 .PHONY: android-init dagger-init notion-init
+.PHONY: codex-openbook-login
 
 .ONESHELL:
 
@@ -140,3 +141,7 @@ dagger-init:
 
 notion-init:
 	NTN_INSTALL_DIR="${HOME}/.local/bin" ntn-init
+
+codex-openbook-login:
+	mkdir -p "${HOME}/.codex_openbook"
+	op read "op://personal/openbook.openai.com/credential" | CODEX_HOME="${HOME}/.codex_openbook" codex login --with-api-key
