@@ -88,6 +88,12 @@ url = "https://ntn.dev"
 executable = true
 refreshPeriod = "168h"
 
+[".local/bin/codex-init"]
+type = "file"
+url = "https://chatgpt.com/codex/install.sh"
+executable = true
+refreshPeriod = "168h"
+
 [".local/bin/claude-init"]
 type = "file"
 url = "https://claude.ai/install.sh"

@@ -116,10 +116,10 @@ update-tools:
 	ntn update
 
 agent-tools:
+	CODEX_NON_INTERACTIVE=1 codex-init | true
 	claude-init || true
 	agy install --skip-path || true
 	mise use -g \
-		npm:@openai/codex@latest \
 		npm:@google/jules@latest \
 		npm:agent-browser@latest
 	uv tool install specify-cli --from git+https://github.com/github/spec-kit.git
@@ -130,6 +130,7 @@ agent-tools:
 	coderabbit-init || true
 
 update-agents:
+	codex update
 	claude update
 	agy update
 	coderabbit update
