@@ -94,6 +94,7 @@ cli-tools:
 	uv tool install organize-tool
 	uv tool install ghtopdep
 	uv tool install licensecheck
+	mise use -g fnox
 	mise use -g npm:@tobilu/qmd@latest
 
 google-tools:
