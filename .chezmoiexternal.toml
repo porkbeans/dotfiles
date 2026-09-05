@@ -106,6 +106,12 @@ url = "https://antigravity.google/cli/install.sh"
 executable = true
 refreshPeriod = "168h"
 
+[".local/bin/fx-init"]
+type = "file"
+url = "https://fx.sh/setup.sh"
+executable = true
+refreshPeriod = "168h"
+
 [".local/bin/coderabbit-init"]
 type = "file"
 url = "https://cli.coderabbit.ai/install.sh"

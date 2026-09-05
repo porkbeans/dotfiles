@@ -119,7 +119,9 @@ agent-tools:
 	CODEX_NON_INTERACTIVE=1 codex-init | true
 	claude-init || true
 	agy install --skip-path || true
+	fx-init || true
 	mise use -g \
+		npm:@earendil-works/pi-coding-agent \
 		npm:@google/jules@latest \
 		npm:agent-browser@latest
 	uv tool install specify-cli --from git+https://github.com/github/spec-kit.git
@@ -133,6 +135,8 @@ update-agents:
 	codex update
 	claude update
 	agy update
+	mise upgrade npm:@earendil-works/pi-coding-agent
+	fx upgrade
 	coderabbit update
 
 android-init:
